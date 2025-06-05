@@ -1,6 +1,6 @@
 import { useRef, type Dispatch, type SetStateAction } from "react";
 import { useUploadPhoto } from "../model/mutations/use-upload-photo";
-import { PUBLIC_URL } from "../../../shared/consts";
+import { PIPER_PUBLIC_URL } from "../../../shared/consts";
 
 type Props = {
 	preview: string | null;
@@ -53,7 +53,7 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 						loop
 						className="absolute top-0 left-0 w-full h-full object-cover"
 					>
-						<source src={`${PUBLIC_URL}/example.mp4`} type="video/mp4" />
+						<source src={`${PIPER_PUBLIC_URL}/example.mp4`} type="video/mp4" />
 					</video>
 				)}
 
