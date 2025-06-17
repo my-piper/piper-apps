@@ -37,8 +37,8 @@ export const RightSection = ({ preview }: Props) => {
 	};
 
 	return (
-		<div className="flex-1">
-			<h1 className="text-[64px] font-extrabold text-center mb-2.5">
+		<div className="flex-1 mx-auto">
+			<h1 className="text-4xl lg:text-5xl xl:text-[64px] font-extrabold text-center mb-2.5">
 				Создавай портреты в любом стиле
 			</h1>
 			<p className="text-xl text-[#ACACAC] text-center mb-[30px]">
@@ -75,7 +75,11 @@ export const RightSection = ({ preview }: Props) => {
 				<option value="cyberpunk">Киберпанк</option>
 			</select>
 			{resultImage && (
-				<img src={resultImage} alt="Result" className="w-full mt-5 rounded-[20px]" />
+				<img
+					src={resultImage}
+					alt="Result"
+					className="w-full mt-5 rounded-[20px]"
+				/>
 			)}
 			<button
 				onClick={handleGenerate}
@@ -89,23 +93,34 @@ export const RightSection = ({ preview }: Props) => {
 					: "Создать образ — 1 р."}
 			</button>
 			<div className="mt-5 mb-2.5 flex items-center gap-2.5">
-				<Switch checked={isUpscaleEnabled} onChange={setIsUpscaleEnabled} />
+				<Switch
+					checked={isUpscaleEnabled}
+					onChange={setIsUpscaleEnabled}
+				/>
 				<label htmlFor="upscale-toggle" className="text-lg">
 					Upscale
 				</label>
 			</div>
 			<div className="usage">
-				<h2 className="text-2xl font-bold mb-3">Используй результат как хочешь:</h2>
+				<h2 className="text-2xl font-bold mb-3">
+					Используй результат как хочешь:
+				</h2>
 				<ul className="list-none p-0 m-0">
 					<li className="text-xl font-medium mb-2">
 						• Аватарка для Telegram, Discord, Steam
 					</li>
-					<li className="text-xl font-medium mb-2">• Фото для Instagram или TikTok</li>
+					<li className="text-xl font-medium mb-2">
+						• Фото для Instagram или TikTok
+					</li>
 					<li className="text-xl font-medium mb-2">
 						• Образ для игры, стрима или ролевухи
 					</li>
-					<li className="text-xl font-medium mb-2">• Подарок близким</li>
-					<li className="text-xl font-medium mb-2">• Образ для иллюстрации</li>
+					<li className="text-xl font-medium mb-2">
+						• Подарок близким
+					</li>
+					<li className="text-xl font-medium mb-2">
+						• Образ для иллюстрации
+					</li>
 				</ul>
 			</div>
 		</div>
