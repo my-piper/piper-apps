@@ -34,8 +34,8 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 	};
 
 	return (
-		<div className="flex flex-col items-center w-[400px] gap-3">
-			<div className="w-[400px] h-[600px] rounded-[20px] relative flex flex-col justify-end items-center overflow-hidden bg-white">
+		<div className="w-full lg:w-[400px] flex flex-col items-center gap-3">
+			<div className="w-full max-w-[685px] lg:w-[400px] aspect-[2/3] rounded-[20px] relative flex flex-col justify-end items-center overflow-hidden bg-white">
 				{isPending ? (
 					<p className="text-center text-3xl text-purple-600 mb-[230px] leading-snug">
 						Идет загрузка изображения...
@@ -53,7 +53,10 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 						loop
 						className="absolute top-0 left-0 w-full h-full object-cover"
 					>
-						<source src={`${PIPER_PUBLIC_URL}/example.mp4`} type="video/mp4" />
+						<source
+							src={`${PIPER_PUBLIC_URL}/example.mp4`}
+							type="video/mp4"
+						/>
 					</video>
 				)}
 
@@ -79,7 +82,10 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 				<br />
 				<span className="locked">
 					🔒{" "}
-					<a href="#" className="text-[#7f5af0] font-bold no-underline">
+					<a
+						href="#"
+						className="text-[#7f5af0] font-bold no-underline"
+					>
 						Получить больше генераций
 					</a>
 				</span>
