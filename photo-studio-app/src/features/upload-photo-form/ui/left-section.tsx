@@ -34,24 +34,70 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 	};
 
 	return (
-		<div className="w-full lg:w-[400px] flex flex-col items-center gap-3">
-			<div className="w-full max-w-[685px] lg:w-[400px] aspect-[2/3] rounded-[20px] relative flex flex-col justify-end items-center overflow-hidden bg-white">
+		<div
+			style={{
+				width: "100%",
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				gap: "12px",
+				maxWidth: "400px", // lg:w-[400px]
+			}}
+		>
+			<div
+				style={{
+					width: "100%",
+					maxWidth: "685px",
+					aspectRatio: "2 / 3",
+					borderRadius: "20px",
+					position: "relative",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "flex-end",
+					alignItems: "center",
+					overflow: "hidden",
+					backgroundColor: "white",
+				}}
+			>
 				{isPending ? (
-					<p className="text-center text-3xl text-purple-600 mb-[230px] leading-snug">
+					<p
+						style={{
+							textAlign: "center",
+							fontSize: "1.875rem", // text-3xl
+							color: "#9333ea", // text-purple-600
+							marginBottom: "230px",
+							lineHeight: "1.375",
+						}}
+					>
 						Идет загрузка изображения...
 					</p>
 				) : preview ? (
 					<img
 						src={preview}
 						alt="Preview"
-						className="absolute top-0 left-0 w-full h-full object-cover z-10"
+						style={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+							zIndex: 10,
+						}}
 					/>
 				) : (
 					<video
 						autoPlay
 						muted
 						loop
-						className="absolute top-0 left-0 w-full h-full object-cover"
+						style={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+							width: "100%",
+							height: "100%",
+							objectFit: "cover",
+						}}
 					>
 						<source
 							src={`${PIPER_PUBLIC_URL}/example.mp4`}
@@ -62,7 +108,18 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 
 				<label
 					htmlFor="upload-photo"
-					className="z-20 mb-2.5 px-[120px] py-3 bg-gradient-to-r from-[#A033FF] to-[#FF963A] rounded-[20px] text-white font-medium text-xl cursor-pointer"
+					style={{
+						zIndex: 20,
+						marginBottom: "10px",
+						padding: "12px 120px",
+						backgroundImage:
+							"linear-gradient(to right, #A033FF, #FF963A)",
+						borderRadius: "20px",
+						color: "white",
+						fontWeight: 500,
+						fontSize: "1.25rem",
+						cursor: "pointer",
+					}}
 				>
 					Загрузи лицо
 				</label>
@@ -71,20 +128,31 @@ export const LeftSection = ({ preview, setPreview }: Props) => {
 					type="file"
 					id="upload-photo"
 					accept="image/*"
-					className="hidden"
+					style={{ display: "none" }}
 					ref={fileInputRef}
 					onChange={handleFileChange}
 				/>
 			</div>
 
-			<div className="text-center text-lg text-[#ccc] leading-snug">
+			<div
+				style={{
+					textAlign: "center",
+					fontSize: "18px",
+					color: "#ccc",
+					lineHeight: "1.375",
+				}}
+			>
 				<span className="count">3/3 осталось сегодня</span>
 				<br />
 				<span className="locked">
 					🔒{" "}
 					<a
 						href="#"
-						className="text-[#7f5af0] font-bold no-underline"
+						style={{
+							color: "#7f5af0",
+							fontWeight: "bold",
+							textDecoration: "none",
+						}}
 					>
 						Получить больше генераций
 					</a>
