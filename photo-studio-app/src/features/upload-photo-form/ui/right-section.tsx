@@ -49,7 +49,8 @@ export const RightSection = ({ preview }: Props) => {
 					id="prompt"
 					value={prompt}
 					onChange={(e) => setPrompt(e.target.value)}
-					className="w-full h-[100px] rounded-[20px] border-none p-5 resize-none text-base text-black outline-none bg-white z-10"
+					style={{ backgroundColor: "white" }}
+					className="w-full h-[100px] rounded-[20px] border-none p-5 resize-none text-base text-black outline-none z-10"
 				/>
 				<div
 					className={`absolute top-5 left-5 text-base text-black opacity-80 pointer-events-none z-20 ${
